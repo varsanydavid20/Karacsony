@@ -1,46 +1,83 @@
+<!-- INDEX.HTML -->
+</html>
+
+
+<!-- ADVENT2.HTML -->
 <!DOCTYPE html>
 <html lang="hu">
 <head>
 <meta charset="UTF-8" />
-<title>Advent Számláló</title>
+<title>2. Advent</title>
 <style>
-body { font-family: Arial, sans-serif; padding: 20px; text-align: center; }
-.counter { margin: 20px; padding: 15px; border: 1px solid #ccc; border-radius: 8px; display: inline-block; }
+body { font-family: Arial; background: #fff8f0; text-align: center; padding: 40px; }
+h1 { color: #a84c00; }
+a { color: #a84c00; font-size: 18px; }
 </style>
 </head>
 <body>
-<h1>Advent Vasárnapok Számláló</h1>
-<div id="counters"></div>
+<h1>2. Advent</h1>
+<p id="count2"></p>
+<a href="index.html">Vissza</a>
 
 
 <script>
-function createCountdown(targetDate) {
-const now = new Date();
-const diff = targetDate - now;
-const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
-return days >= 0 ? days : 0;
-}
+const target2 = new Date(new Date().getFullYear(), 11, 7);
+const diff2 = Math.ceil((target2 - new Date()) / (1000*60*60*24));
+document.getElementById('count2').innerText = diff2 + " nap van hátra";
+</script>
+</body>
+</html>
 
 
-const year = new Date().getFullYear();
-const adventDates = [
-new Date(year, 10, 30), // Advent 1
-new Date(year, 11, 7), // Advent 2
-new Date(year, 11, 14), // Advent 3
-new Date(year, 11, 21) // Advent 4
-];
+<!-- ADVENT3.HTML -->
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8" />
+<title>3. Advent</title>
+<style>
+body { font-family: Arial; background: #fff8f0; text-align: center; padding: 40px; }
+h1 { color: #a84c00; }
+a { color: #a84c00; font-size: 18px; }
+</style>
+</head>
+<body>
+<h1>3. Advent</h1>
+<p id="count3"></p>
+<a href="index.html">Vissza</a>
 
 
-const container = document.getElementById('counters');
+<script>
+const target3 = new Date(new Date().getFullYear(), 11, 14);
+const diff3 = Math.ceil((target3 - new Date()) / (1000*60*60*24));
+document.getElementById('count3').innerText = diff3 + " nap van hátra";
+</script>
+</body>
+</html>
 
 
-adventDates.forEach((date, index) => {
-const daysLeft = createCountdown(date);
-const div = document.createElement('div');
-div.className = 'counter';
-div.innerHTML = `<h2>Advent ${index + 1}. Vasárnap</h2><p>${daysLeft} nap van hátra</p>`;
-container.appendChild(div);
-});
+<!-- ADVENT4.HTML -->
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8" />
+<title>4. Advent</title>
+<style>
+body { font-family: Arial; background: #fff8f0; text-align: center; padding: 40px; }
+h1 { color: #a84c00; }
+a { color: #a84c00; font-size: 18px; }
+</style>
+</head>
+<body>
+<h1>4. Advent</h1>
+<p id="count4"></p>
+<a href="index.html">Vissza</a>
+
+
+<script>
+const target4 = new Date(new Date().getFullYear(), 11, 21);
+const diff4 = Math.ceil((target4 - new Date()) / (1000*60*60*24));
+document.getElementById('count4').innerText = diff4 + " nap van hátra";
 </script>
 </body>
 </html>
