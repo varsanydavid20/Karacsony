@@ -1,83 +1,96 @@
-<!-- INDEX.HTML -->
-</html>
-
-
-<!-- ADVENT2.HTML -->
+<!-- Modern Advent Web – MULTI PAGE VERSION -->
+<!-- FILE 1: index.html -->
 <!DOCTYPE html>
 <html lang="hu">
 <head>
 <meta charset="UTF-8" />
-<title>2. Advent</title>
+<title>Advent Számláló</title>
 <style>
-body { font-family: Arial; background: #fff8f0; text-align: center; padding: 40px; }
-h1 { color: #a84c00; }
-a { color: #a84c00; font-size: 18px; }
+body {
+margin: 0;
+font-family: 'Segoe UI', sans-serif;
+background: url('https://images.unsplash.com/photo-1544207240-428dff6752b3?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+color: white;
+backdrop-filter: blur(3px);
+}
+h1 { font-size: 50px; margin-bottom: 20px; text-shadow: 0 0 15px #000; }
+.box {
+background: rgba(0,0,0,0.55);
+padding: 20px 40px;
+border-radius: 15px;
+margin: 10px;
+font-size: 24px;
+transition: 0.3s;
+}
+.box:hover { background: rgba(0,0,0,0.75); transform: scale(1.05); }
+a { color: white; text-decoration: none; }
 </style>
 </head>
 <body>
-<h1>2. Advent</h1>
-<p id="count2"></p>
-<a href="index.html">Vissza</a>
-
-
-<script>
-const target2 = new Date(new Date().getFullYear(), 11, 7);
-const diff2 = Math.ceil((target2 - new Date()) / (1000*60*60*24));
-document.getElementById('count2').innerText = diff2 + " nap van hátra";
-</script>
+<h1>Advent Vasárnapok</h1>
+<div class="box"><a href="advent1.html">➤ 1. Advent</a></div>
+<div class="box"><a href="advent2.html">➤ 2. Advent</a></div>
+<div class="box"><a href="advent3.html">➤ 3. Advent</a></div>
+<div class="box"><a href="advent4.html">➤ 4. Advent</a></div>
 </body>
 </html>
 
 
-<!-- ADVENT3.HTML -->
+
+
+<!-- TEMPLATE FOR SUBPAGES -->
+<!-- Copy this and change the date + number for each page -->
+
+
+<!-- FILE EXAMPLE: advent1.html -->
 <!DOCTYPE html>
 <html lang="hu">
 <head>
 <meta charset="UTF-8" />
-<title>3. Advent</title>
+<title>1. Advent</title>
 <style>
-body { font-family: Arial; background: #fff8f0; text-align: center; padding: 40px; }
-h1 { color: #a84c00; }
-a { color: #a84c00; font-size: 18px; }
+body {
+margin: 0;
+font-family: 'Segoe UI', sans-serif;
+background: url('https://images.unsplash.com/photo-1513639725746-c5d3e861f32a?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+color: white;
+backdrop-filter: blur(3px);
+text-align: center;
+}
+h1 { font-size: 60px; margin-bottom: 20px; text-shadow: 0 0 15px #000; }
+#count { font-size: 45px; margin-bottom: 30px; text-shadow: 0 0 10px #000; }
+a { color: white; text-decoration: none; font-size: 24px; background: rgba(0,0,0,0.4); padding: 10px 25px; border-radius: 10px; }
+a:hover { background: rgba(0,0,0,0.7); }
 </style>
 </head>
 <body>
-<h1>3. Advent</h1>
-<p id="count3"></p>
-<a href="index.html">Vissza</a>
+<h1>1. Advent</h1>
+<p id="count">Számolás...</p>
+<a href="index.html">⬅ Vissza</a>
 
 
 <script>
-const target3 = new Date(new Date().getFullYear(), 11, 14);
-const diff3 = Math.ceil((target3 - new Date()) / (1000*60*60*24));
-document.getElementById('count3').innerText = diff3 + " nap van hátra";
-</script>
-</body>
-</html>
+function countdown(target) {
+const now = new Date();
+const diff = target - now;
+const days = Math.ceil(diff / (1000*60*60*24));
+return days;
+}
 
 
-<!-- ADVENT4.HTML -->
-<!DOCTYPE html>
-<html lang="hu">
-<head>
-<meta charset="UTF-8" />
-<title>4. Advent</title>
-<style>
-body { font-family: Arial; background: #fff8f0; text-align: center; padding: 40px; }
-h1 { color: #a84c00; }
-a { color: #a84c00; font-size: 18px; }
-</style>
-</head>
-<body>
-<h1>4. Advent</h1>
-<p id="count4"></p>
-<a href="index.html">Vissza</a>
-
-
-<script>
-const target4 = new Date(new Date().getFullYear(), 11, 21);
-const diff4 = Math.ceil((target4 - new Date()) / (1000*60*60*24));
-document.getElementById('count4').innerText = diff4 + " nap van hátra";
+const targetDate = new Date(new Date().getFullYear(), 10, 30);
+const daysLeft = countdown(targetDate);
+document.getElementById('count').innerText = daysLeft + " nap van hátra";
 </script>
 </body>
 </html>
